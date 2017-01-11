@@ -6010,12 +6010,12 @@ angular.module('ngCordova.plugins.pinDialog', [])
   .factory('$cordovaPinDialog', ['$q', '$window', function ($q, $window) {
 
     return {
-      prompt: function (message, title, buttons) {
+      prompt: function (message, title, buttons, placeholder) {
         var q = $q.defer();
 
         $window.plugins.pinDialog.prompt(message, function (res) {
           q.resolve(res);
-        }, title, buttons);
+        }, title, buttons, placeholder);
 
         return q.promise;
       }
